@@ -12,6 +12,10 @@
   <servlet-name>twiyyer</servlet-name>
   <servlet-class>com.zakelfassi.twiyyer.TwiyyerServlet</servlet-class>
 </servlet>
+<servlet>
+    <servlet-name>addtwiys</servlet-name>
+    <servlet-class>com.zakelfassi.twiyyer.AddTwiysServlet</servlet-class>
+</servlet>
 
  <servlet-mapping>
   <servlet-name>SystemServiceServlet</servlet-name>
@@ -22,6 +26,11 @@
      <servlet-name>twiyyer</servlet-name>
      <url-pattern>/twiyyer</url-pattern>
    </servlet-mapping>
+   
+    <servlet-mapping>
+        <servlet-name>addtwiys</servlet-name>
+        <url-pattern>/addtwiys</url-pattern>
+    </servlet-mapping>   
  
   <welcome-file-list>
     <welcome-file>twiyyer.jsp</welcome-file>

@@ -30,5 +30,10 @@ to include your name with Twiys you post.</p>
     }
 %>
 
+  <form action="/addtwiys" method="post">
+    <div><textarea name="twiycontent" rows="3" cols="60"></textarea></div>
+    <div><input type="submit" value="Post Greeting" /></div>
+  </form>
+
   </body>
 </html>
