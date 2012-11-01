@@ -1,0 +1,154 @@
+{
+  "extends" : "thirdParty.api",
+  "root" : "https://twiyyer-engine.appspot.com/_ah/api",
+  "name" : "twiyyer",
+  "version" : "v1",
+  "adapter" : {
+    "bns" : "http://twiyyer-engine.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+  },
+  "frontendLimits" : {
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+  },
+  "methods" : {
+    "twiyyer.insertTwiy" : {
+      "path" : "twiy",
+      "httpMethod" : "POST",
+      "rosyMethod" : "TwiyEndpoint.insertTwiy",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "twiyyer.removeTwiy" : {
+      "path" : "twiy/{id}",
+      "httpMethod" : "DELETE",
+      "rosyMethod" : "TwiyEndpoint.removeTwiy",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "required" : true,
+            "type" : "int64"
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "twiyyer.getTwiy" : {
+      "path" : "twiy/{id}",
+      "httpMethod" : "GET",
+      "rosyMethod" : "TwiyEndpoint.getTwiy",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "required" : true,
+            "type" : "int64"
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "twiyyer.listTwiy" : {
+      "path" : "twiy",
+      "httpMethod" : "GET",
+      "rosyMethod" : "TwiyEndpoint.listTwiy",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "twiyyer.updateTwiy" : {
+      "path" : "twiy",
+      "httpMethod" : "PUT",
+      "rosyMethod" : "TwiyEndpoint.updateTwiy",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Twiy" : {
+        "id" : "Twiy",
+        "type" : "object",
+        "properties" : {
+          "hashtag" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "twiy" : {
+            "type" : "string"
+          }
+        }
+      },
+      "TwiyCollection" : {
+        "id" : "TwiyCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Twiy"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "TwiyEndpoint.insertTwiy" : {
+        "request" : {
+          "$ref" : "Twiy"
+        },
+        "response" : {
+          "$ref" : "Twiy"
+        }
+      },
+      "TwiyEndpoint.removeTwiy" : {
+        "response" : {
+          "$ref" : "Twiy"
+        }
+      },
+      "TwiyEndpoint.getTwiy" : {
+        "response" : {
+          "$ref" : "Twiy"
+        }
+      },
+      "TwiyEndpoint.listTwiy" : {
+        "response" : {
+          "$ref" : "TwiyCollection"
+        }
+      },
+      "TwiyEndpoint.updateTwiy" : {
+        "request" : {
+          "$ref" : "Twiy"
+        },
+        "response" : {
+          "$ref" : "Twiy"
+        }
+      }
+    }
+  }
+}

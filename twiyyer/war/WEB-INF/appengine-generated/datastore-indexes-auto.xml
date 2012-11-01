@@ -1,8 +1,8 @@
-<!-- Indices written at Thu, 1 Nov 2012 18:48:52 WET -->
+<!-- Indices written at Thu, 1 Nov 2012 23:40:08 WET -->
 
 <datastore-indexes>
 
-    <!-- Used 11 times in query history -->
+    <!-- Used 61 times in query history -->
     <datastore-index kind="Twiy" ancestor="true" source="auto">
         <property name="date" direction="desc"/>
     </datastore-index>
